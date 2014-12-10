@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6154.17" systemVersion="14B25" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6154.17"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="Voe-Tx-rLC" id="GzC-gU-4Uq"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="SessionMan" customModuleProvider="target">
+            <connections>
+                <outlet property="AboutWindow" destination="UzL-uP-ch9" id="AZR-V0-ogu"/>
+                <outlet property="ConfirmActionIcon" destination="qa7-IA-MHz" id="1GE-eJ-LZo"/>
+                <outlet property="ConfirmCancleIcon" destination="t51-bI-Xn4" id="5ZK-VT-Cg6"/>
+                <outlet property="ConfirmCountdownTEXT" destination="4NO-mc-BVE" id="dZI-j5-tW4"/>
+                <outlet property="ConfirmWindow" destination="1Kg-X6-63d" id="L39-Ui-nha"/>
+                <outlet property="PrefConfirmCheck" destination="i2A-WK-HDl" id="gPN-hE-oqN"/>
+                <outlet property="PrefConfirmTimerBox" destination="Q0p-of-uk2" id="kpw-7S-6yF"/>
+                <outlet property="VersionTEXT" destination="Zby-Ll-yQw" id="1Jp-A4-yvX"/>
+                <outlet property="logoutIcon" destination="4pw-29-WKd" id="zad-hN-pMM"/>
+                <outlet property="restartIcon" destination="FIe-lp-7el" id="hFZ-ie-6bM"/>
+                <outlet property="sesPreferencesWindow" destination="TgQ-U2-DhQ" id="NNH-bR-nx7"/>
+                <outlet property="shutdownIcon" destination="oDA-TV-VLZ" id="iim-LO-Ta3"/>
+                <outlet property="sleepIcon" destination="BQP-97-BnE" id="05A-VG-H1Q"/>
+                <outlet property="window" destination="QI5-vl-IIX" id="T4x-0X-GwW"/>
+            </connections>
+        </customObject>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <menu title="Mian Window" systemMenu="main" id="AYu-sK-qS6">
+            <items>
+                <menuItem title="SessionMan" id="1Xt-HY-uBw">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="SessionMan" systemMenu="apple" id="uQy-DD-JDr">
+                        <items>
+                            <menuItem title="About SessionMan" keyEquivalent="." id="5kV-Vb-QxS">
+                                <connections>
+                                    <action selector="ShowAboutWindow:" target="Voe-Tx-rLC" id="Hsi-C2-bCS"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
+                            <menuItem title="Preferences.." keyEquivalent="," id="rUg-Gn-6gj">
+                                <connections>
+                                    <action selector="ShowPreferencesWindow:" target="Voe-Tx-rLC" id="xpg-jf-X0u"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="bG8-7s-kyh"/>
+                            <menuItem title="Hide SessionMan" keyEquivalent="h" id="Olw-nP-bQN">
+                                <connections>
+                                    <action selector="hide:" target="-1" id="PnN-Uc-m68"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Hide Others" keyEquivalent="h" id="Vdr-fp-XzO">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="hideOtherApplications:" target="-1" id="VT4-aY-XCT"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Show All" id="Kd2-mp-pUS">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="unhideAllApplications:" target="-1" id="Dhg-Le-xox"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
+                            <menuItem title="Quit SessionMan" keyEquivalent="q" id="4sb-4s-VLi">
+                                <connections>
+                                    <action selector="forceQuit:" target="Voe-Tx-rLC" id="VEa-9v-hjl"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="File" id="Rra-PS-VI2">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="File" id="AIM-DV-YyH">
+                        <items>
+                            <menuItem title="Close" id="l0P-Qu-ip1">
+                                <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="setQuite:" target="Voe-Tx-rLC" id="p69-g7-mEV"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+            </items>
+        </menu>
+        <window restorable="NO" hidesOnDeactivate="YES" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="QI5-vl-IIX" customClass="NSPanel">
+            <windowStyleMask key="styleMask" utility="YES" HUD="YES"/>
+            <rect key="contentRect" x="136" y="163" width="538" height="162"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <view key="contentView" id="7gA-mD-DSr">
+                <rect key="frame" x="0.0" y="0.0" width="538" height="162"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button appearanceType="aqua" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oDA-TV-VLZ">
+                        <rect key="frame" x="20" y="20" width="122" height="122"/>
+                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="shutdown" imagePosition="only" alignment="center" refusesFirstResponder="YES" state="on" imageScaling="proportionallyDown" inset="2" id="lK9-UP-ZQS">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="shutDownImageDO:" target="Voe-Tx-rLC" id="mrY-H1-Wnk"/>
+                        </connections>
+                    </button>
+                    <button appearanceType="aqua" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FIe-lp-7el">
+                        <rect key="frame" x="148" y="20" width="122" height="122"/>
+                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="restart" imagePosition="only" alignment="center" refusesFirstResponder="YES" state="on" imageScaling="proportionallyDown" inset="2" id="HZU-pa-lhk">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="restartIconDo:" target="Voe-Tx-rLC" id="NXa-z7-8m6"/>
+                        </connections>
+                    </button>
+                    <button appearanceType="aqua" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BQP-97-BnE">
+                        <rect key="frame" x="275" y="20" width="122" height="122"/>
+                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="sleep" imagePosition="only" alignment="center" refusesFirstResponder="YES" state="on" imageScaling="proportionallyDown" inset="2" id="1Xe-2K-FD9">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="sleepIconDo:" target="Voe-Tx-rLC" id="W1d-Yl-a0s"/>
+                        </connections>
+                    </button>
+                    <button appearanceType="aqua" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4pw-29-WKd">
+                        <rect key="frame" x="396" y="20" width="122" height="122"/>
+                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="logout" imagePosition="only" alignment="center" refusesFirstResponder="YES" state="on" imageScaling="proportionallyDown" inset="2" id="K4l-dc-0ko">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="logoutIconDo:" target="Voe-Tx-rLC" id="4JO-T1-7bb"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <point key="canvasLocation" x="44" y="304"/>
+        </window>
+        <window restorable="NO" hidesOnDeactivate="YES" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="1Kg-X6-63d" customClass="NSPanel">
+            <windowStyleMask key="styleMask" utility="YES" HUD="YES"/>
+            <rect key="contentRect" x="136" y="163" width="367" height="143"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <view key="contentView" id="NDw-Qi-X52">
+                <rect key="frame" x="0.0" y="0.0" width="367" height="143"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField appearanceType="aqua" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4NO-mc-BVE">
+                        <rect key="frame" x="18" y="20" width="107" height="103"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="tZn-A4-5DO">
+                            <font key="font" metaFont="system" size="79"/>
+                            <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button appearanceType="aqua" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t51-bI-Xn4">
+                        <rect key="frame" x="131" y="20" width="103" height="103"/>
+                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="close" imagePosition="only" alignment="center" refusesFirstResponder="YES" state="on" imageScaling="proportionallyDown" inset="2" id="4m9-4Q-jMj">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="ConfirmCancelIconDo:" target="Voe-Tx-rLC" id="SaO-aI-VyV"/>
+                        </connections>
+                    </button>
+                    <button appearanceType="aqua" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qa7-IA-MHz">
+                        <rect key="frame" x="244" y="20" width="103" height="103"/>
+                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="circle" imagePosition="only" alignment="center" refusesFirstResponder="YES" state="on" imageScaling="proportionallyDown" inset="2" id="fWo-PC-6cs">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="ConfirmActionIconDo:" target="Voe-Tx-rLC" id="Vwk-QG-wEf"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <point key="canvasLocation" x="-41.5" y="533.5"/>
+        </window>
+        <window title="SessionManager - Preferences" hidesOnDeactivate="YES" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="TgQ-U2-DhQ" customClass="NSPanel">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" utility="YES"/>
+            <rect key="contentRect" x="196" y="112" width="640" height="166"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <view key="contentView" id="tka-4x-10N">
+                <rect key="frame" x="0.0" y="0.0" width="640" height="166"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField appearanceType="aqua" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RzH-o1-r4I">
+                        <rect key="frame" x="49" y="85" width="544" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Automatical timeout (Seconds)" id="v1K-Rz-oig">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button appearanceType="aqua" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i2A-WK-HDl">
+                        <rect key="frame" x="48" y="119" width="544" height="18"/>
+                        <buttonCell key="cell" type="check" title="Take Action with confirmations" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="NAO-4A-282">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="PrefConfirmCheckDo:" target="Voe-Tx-rLC" id="dYo-db-rZT"/>
+                        </connections>
+                    </button>
+                    <popUpButton appearanceType="aqua" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q0p-of-uk2">
+                        <rect key="frame" x="46" y="40" width="547" height="26"/>
+                        <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="DYB-Cw-hFB">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="menu"/>
+                            <menu key="menu" id="spL-iz-pXe">
+                                <items>
+                                    <menuItem title="30" id="4ea-8W-fYy">
+                                        <string key="keyEquivalent" base64-UTF8="YES">
+Aw
+</string>
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="60" id="x3s-rT-Er8">
+                                        <string key="keyEquivalent" base64-UTF8="YES">
+Aw
+</string>
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="90" id="NUt-61-f4D"/>
+                                </items>
+                            </menu>
+                        </popUpButtonCell>
+                        <connections>
+                            <action selector="PrefConfirmTimerBoxDo:" target="Voe-Tx-rLC" id="bCC-Vr-HEr"/>
+                        </connections>
+                    </popUpButton>
+                </subviews>
+            </view>
+            <point key="canvasLocation" x="95" y="964"/>
+        </window>
+        <window title="About -SessionManager" restorable="NO" hidesOnDeactivate="YES" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="UzL-uP-ch9">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="207" width="651" height="263"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <view key="contentView" id="hfB-7g-0OG">
+                <rect key="frame" x="0.0" y="0.0" width="651" height="263"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8LT-6r-UQj">
+                        <rect key="frame" x="20" y="26" width="217" height="217"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="logo" id="F2w-qU-I1W"/>
+                    </imageView>
+                    <textField appearanceType="aqua" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w3C-K6-BAS">
+                        <rect key="frame" x="321" y="212" width="313" height="31"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="About SessionManager" id="Rmy-vT-FgV">
+                            <font key="font" metaFont="system" size="18"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField appearanceType="aqua" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zby-Ll-yQw">
+                        <rect key="frame" x="321" y="195" width="311" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Version 1.0 beta 1417184149" id="AHf-5N-XBe">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField appearanceType="aqua" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FU2-1E-l4y">
+                        <rect key="frame" x="321" y="35" width="313" height="152"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="1Td-Ov-rTd">
+                            <font key="font" metaFont="system"/>
+                            <string key="title">Session Manager a Minimal Tool for Mac OS X.
+Session Manager is Functional for Shut Down, Restart, Sleep and Log Out. From Mac OS X Desktop
+Session Manager Development by Nattapong Pullkhow (xenatt).
+
+Contact Developer.
+Email : exenatt@gmail.com
+Twitter : @xenatt</string>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+            </view>
+            <point key="canvasLocation" x="136.5" y="1308.5"/>
+        </window>
+    </objects>
+    <resources>
+        <image name="circle" width="1024" height="1024"/>
+        <image name="close" width="1024" height="1024"/>
+        <image name="logo" width="372.3636474609375" height="372.3636474609375"/>
+        <image name="logout" width="1024" height="1024"/>
+        <image name="restart" width="1024" height="1024"/>
+        <image name="shutdown" width="1024" height="1024"/>
+        <image name="sleep" width="1024" height="1024"/>
+    </resources>
+</document>
